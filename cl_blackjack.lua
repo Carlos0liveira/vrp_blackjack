@@ -1,12 +1,7 @@
---------------------------------------------
---Created by Robbster, do not redistribute--
---------------------------------------------
---If you're snooping here, before you ask why some function names are horrible things like func_368, its so I could keep track of where I was at in the decompiled scripts :P
-
 local closeToCasino = false
 local closestChair = -1
 local closestChairDist = 1000 
-local Local_198f_247 = -1 --this is just closestChair pretty sure 
+local Local_198f_247 = -1 
 local closestDealerPed = nil 
 local closestDealerPedDist = 1000
 local dealerPeds = {}
@@ -39,7 +34,7 @@ local shouldForceIdleCardGames = false
 local cfg = {}
 
 
---Please note the config order is important, dealerPositions must start from 0 and increase consecutively 
+
 cfg.blackjackTables = {
     --[id] = {x,y,z,heading}
     [0] = {
@@ -76,8 +71,7 @@ cfg.blackjackTables = {
     },
 }
 
---Use this command to get the coords you need for setting up new tables. 
---Some maps use the prop vw_prop_casino_blckjack_01 some use vw_prop_casino_blckjack_01b, so change accordingly.
+
 RegisterCommand("getcasinotable",function()
     local playerCoords = GetEntityCoords(PlayerPedId())
     local blackjackTable = GetClosestObjectOfType(playerCoords.x,playerCoords.y,playerCoords.z,GetEntityHeading(PlayerPedId()),GetHashKey("vw_prop_casino_blckjack_01"),0,0,0)
